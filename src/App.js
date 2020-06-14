@@ -5,7 +5,6 @@ import AppBar from './components/AppBar/AppBar';
 import Search from './components/Search/Search';
 import Forecast from './containers/Forecast/Forecast';
 import Error from './components/Error/Error';
-import MuiCard from '@material-ui/core/Card';
 
 const Application = styled.div`
   text-align: center;
@@ -33,7 +32,7 @@ const Card = styled.div`
   }
 `;
 
-const apiKey = 'dbb624c32c7f0d652500552c5ebbde56';
+const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
 class App extends Component {
   state = {

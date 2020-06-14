@@ -4,6 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Toggle from '@material-ui/core/Switch';
+import './Forecast.css';
 
 const Wrapper = styled.div`
   display: flex;
@@ -41,7 +42,7 @@ const DateRow = styled.div`
   margin-left: 20px;
 `;
 
-const CurrentDate = styled.h2`
+const CurrentDate = styled.h3`
   margin: 0;
 `;
 
@@ -244,7 +245,7 @@ class Forecast extends Component {
         <Weekly>
           {this.props.forecast.slice(1).map(day => (
             <li key={day.dt}>
-              <h3>{this.getDay(new Date(day.dt * 1000).getDay())}</h3>
+              <h3 className='day-title'>{this.getDay(new Date(day.dt * 1000).getDay())}</h3>
               <i className={`wi wi-owm-${day.weather[0].id}`}></i>
               <p>{`${Math.round(Object.values(day.temp).reduce((sum, current) => sum + current) / Object.values(day.temp).length)}°${this.state.tempUnit}`}</p>
             </li>

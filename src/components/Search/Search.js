@@ -24,6 +24,7 @@ const LocationBtn = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+  color: #1976d2;
 
   ::after {
     content: "";
@@ -32,7 +33,7 @@ const LocationBtn = styled.button`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000;
+    background-color: #1976d2;
     visibility: hidden;
     transform: scaleX(0);
     transition: all .2s ease-in-out;
