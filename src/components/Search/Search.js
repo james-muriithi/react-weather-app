@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextField from 'material-ui/TextField';
+import TextField from '@material-ui/core/TextField';
 import { cyan500 } from 'material-ui/styles/colors';
 
 const Wrapper = styled.div`
@@ -57,7 +57,7 @@ const Search = (props) => {
     <Wrapper>
       <form onSubmit={props.getForecastByCity}>
         <TextField
-          hintText="City"
+          placeholder="City"
           value={props.city}
           onChange={(e) => props.textChanged(e.target.value)}
         />

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import IconButton from 'material-ui/IconButton';
-import SvgIcon from 'material-ui/SvgIcon';
-import Toggle from 'material-ui/Toggle';
+import IconButton from '@material-ui/core/IconButton';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import Toggle from '@material-ui/core/Switch';
 
 const Wrapper = styled.div`
   display: flex;
@@ -147,7 +148,8 @@ const Weekly = styled.ul`
 
 class Forecast extends Component {
   state = {
-    tempUnit: 'C'
+    tempUnit: 'C',
+    checked: false
   }
 
   getDay = (index) => {
@@ -182,7 +184,7 @@ class Forecast extends Component {
 
   changeTempUnit = () => {
     const updatedTempUnit = this.state.tempUnit === 'C' ? 'F' : 'C';
-    this.setState({ tempUnit: updatedTempUnit });
+    this.setState({ tempUnit: updatedTempUnit, checked: !this.state.checked });
     this.props.changeUnit(updatedTempUnit);
   }
 
@@ -199,11 +201,18 @@ class Forecast extends Component {
             </SvgIcon>
           </IconButton>
           <City>{this.props.city}</City>
-          <Toggle
-            onToggle={this.changeTempUnit}
-            label={`Change to °${this.state.tempUnit === 'C' ? 'F' : 'C'}`}
-            labelStyle={{ whiteSpace: 'nowrap' }}
+          <FormControlLabel
+            labelPlacement="start"
             style={ToggleStyles}
+            control={
+              <Toggle
+                checked={this.state.checked}
+                onChange={this.changeTempUnit}
+                name="toggle"
+                color="primary"
+              />
+            }
+            label={`Change to °${this.state.tempUnit === 'C' ? 'F' : 'C'}`}
           />
         </Menu>
         <DateRow>

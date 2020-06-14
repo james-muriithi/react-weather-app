@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
-
+import AppBar from './components/AppBar/AppBar';
 import Search from './components/Search/Search';
 import Forecast from './containers/Forecast/Forecast';
 import Error from './components/Error/Error';
@@ -121,13 +121,12 @@ class App extends Component {
       />;
 
     return (
-      <MuiThemeProvider>
         <Application>
+          <AppBar/>
           <Card>
             {!this.state.error.state ? cardContent : <Error back={this.clear} message={this.state.error.message} />}
           </Card>
         </Application>
-      </MuiThemeProvider>
     );
   }
 }

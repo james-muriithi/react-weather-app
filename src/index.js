@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { injectGlobal } from 'styled-components';
-import { cyan500 } from 'material-ui/styles/colors';
 import 'weathericons/css/weather-icons.min.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -17,7 +16,7 @@ injectGlobal`
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: ${cyan500};
+    background-color: #fff;
 
     @media (max-width: 1000px) {
       background-color: white;
