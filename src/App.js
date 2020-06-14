@@ -5,11 +5,12 @@ import AppBar from './components/AppBar/AppBar';
 import Search from './components/Search/Search';
 import Forecast from './containers/Forecast/Forecast';
 import Error from './components/Error/Error';
+import MuiCard from '@material-ui/core/Card';
 
 const Application = styled.div`
   text-align: center;
-  height: 100vh;
-  width: 1000px;
+  height: 75vh;
+  width: 65%;
   margin: 0 auto;
 
   @media (max-width: 1000px) {
@@ -19,11 +20,11 @@ const Application = styled.div`
 
 const Card = styled.div`
   position: relative;
-  top: 50%;
-  margin-top: -300px;
-  height: 600px;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
   background-color: white;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .25);
+  padding-bottom: 20px;
 
   @media (max-width: 1000px) {
     top: 0;
@@ -121,12 +122,14 @@ class App extends Component {
       />;
 
     return (
+      <div style={{height:"100%"}}> 
+        <AppBar />
         <Application>
-          <AppBar/>
-          <Card>
+          <Card variant="outlined">
             {!this.state.error.state ? cardContent : <Error back={this.clear} message={this.state.error.message} />}
           </Card>
         </Application>
+      </div>
     );
   }
 }

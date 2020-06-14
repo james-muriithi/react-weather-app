@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   align-items: center;
   height: 100%;
 
@@ -51,11 +52,15 @@ const LocationBtn = styled.button`
     background-color: ${cyan500};
   }
 `;
+const form = {
+  padding: "0px 30px 0px 30px",
+  width: "100%"
+}
 
 const Search = (props) => {
   return (
     <Wrapper>
-      <form onSubmit={props.getForecastByCity}>
+      <form onSubmit={props.getForecastByCity} style={form}>
         <TextField
           placeholder="City"
           value={props.city}
