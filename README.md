@@ -6,4 +6,5 @@ Features:
 * City can be selected by name or current location can be used
 * Switch between Celsius and Fahrenheit
 
-You can try it on GitHub Pages: https://artrnh.github.io/weather/
+You can try it on GitHub Pages: 
+https://james-muriithi.github.io/react-weather-app/
