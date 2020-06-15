@@ -1,12 +1,13 @@
 export default async function getUserLocation(){
     return new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(position => {
-            resolve({
-                lat: position.coords.latitude,
-                lon: position.coords.longitude
-            })
-        }, (error) => reject(new Error(showError(error)))
-    )});
+        navigator.geolocation
+            ? navigator.geolocation.getCurrentPosition(position => {
+                resolve({
+                    lat: position.coords.latitude,
+                    lon: position.coords.longitude
+                })}, (error) => reject(new Error(showError(error)))) 
+            : reject(new Error("Geolocation API is not supported"));
+    });
 }
 
 const showError = (error) => {

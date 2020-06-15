@@ -172,7 +172,7 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
 SEO.defaultProps = {
   title: `React Wather App`,
   desc: `PWA Weather Application made with React/Material Ui/Gatsby.This is a personal project built in my spare time for learning purposes.`,
-  banner: `/me-icon.jpg`,
+  banner: `/icon.png`,
   pathname: null,
   article: false,
   node: null,

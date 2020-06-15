@@ -12,7 +12,7 @@ module.exports = {
         headline: `React Wather App`,
         twitter: `@jam_es_muriithi`,
         facebook: `james-muriithi`,
-        banner: `/me-icon.jpg`
+        banner: `/icon.png`
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
