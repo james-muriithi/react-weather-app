@@ -62,13 +62,13 @@ class App extends Component {
         try {
             const coords = await getUserLocation();
             const json = await getForecastDataByCoordinates(coords)
+            
             if (json.cod !== '200') {
                 this.setState({ error: { state: true } });
             } else {
                 this.setState({ city: json.city.name, forecast: json.list });
             }
         } catch (error) {
-            console.log(error);
             this.setState({ error: { state: true, message: error.message } });
         }
     }

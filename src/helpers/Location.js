@@ -1,4 +1,4 @@
-const getUserLocation = async () => {
+export default async function getUserLocation(){
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(position => {
             resolve({
@@ -23,4 +23,3 @@ const showError = (error) => {
             return "An unknown error occurred.";
     }
 }
-export default getUserLocation;

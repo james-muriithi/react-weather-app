@@ -28,6 +28,6 @@
         "start": "gatsby develop",
         "serve": "gatsby serve",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d public"
     }
 }
