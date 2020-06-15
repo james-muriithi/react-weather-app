@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-e6f32408d804f7af81b2.js"
+    "url": "webpack-runtime-de032ad746f933369895.js"
   },
   {
     "url": "framework-43898561dafbdf32aefd.js"
   },
   {
-    "url": "app-d6ca50982b02ee391bda.js"
+    "url": "app-16d7307e27dab954e67a.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "a0b1254fa3ca1a5cc4deb4bba1017ee7"
+    "revision": "f59c75efee65f3ba1b973e1bc8f79932"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-2a242c05cade058abd28.js"
@@ -48,10 +48,10 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "31fd427771ade6febaedcc6e14a3bfe2"
+    "revision": "bd5fe0d268b8f4fd6455fdc3896e2c50"
   },
   {
-    "url": "styles.579d99faba2a34a2db4f.css"
+    "url": "styles.452d082438a4d559ea10.css"
   },
   {
     "url": "component---src-pages-index-js-0f8896c2a3cf8316fe09.js"
@@ -65,7 +65,7 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "7c82e3cc8851e8efb94a7c74280f3b7c"
+    "revision": "bd017a9bd3a1fc9196fe62240a77790f"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -153,12 +153,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/react-weather-app`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-d6ca50982b02ee391bda.js`))) {
+  if (!resources || !(await caches.match(`/react-weather-app/app-16d7307e27dab954e67a.js`))) {
     return await fetch(event.request)
   }
 
@@ -171,7 +171,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/react-weather-app/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
