@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { cyan500 } from 'material-ui/styles/colors';
+import cyan from '@material-ui/core/colors/purple';
+
+const cyan500 = cyan[ 500 ]
 
 const Wrapper = styled.div`
   display: flex;
