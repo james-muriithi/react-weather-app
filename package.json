@@ -4,6 +4,7 @@
     "private": true,
     "homepage": "https://james-muriithi.github.io/",
     "dependencies": {
+        "dotenv": "^8.2.0",
         "@material-ui/core": "^4.10.2",
         "@material-ui/icons": "^4.9.1",
         "gatsby": "^2.23.3",
@@ -11,18 +12,21 @@
         "gatsby-plugin-advanced-sitemap": "^1.5.5",
         "gatsby-plugin-manifest": "^2.4.11",
         "gatsby-plugin-offline": "^3.2.9",
+        "gatsby-plugin-react-helmet": "^3.3.4",
+        "gatsby-plugin-sharp": "^2.6.11",
+        "gatsby-source-filesystem": "^2.3.11",
+        "gatsby-transformer-sharp": "^2.5.5",
         "gh-pages": "^1.1.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
-        "react-scripts": "1.1.0",
+        "react-helmet": "^6.1.0",
         "styled-components": "^3.0.2",
         "weathericons": "^2.1.0"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject",
+        "build": "gatsby build",
+        "start": "gatsby develop",
+        "serve": "gatsby serve",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build"
     }
