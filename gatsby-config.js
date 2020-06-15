@@ -31,10 +31,10 @@ module.exports = {
                 name: `React Weather App`,
                 short_name: `Weather App`,
                 start_url: `/`,
-                background_color: `#1976d2`,
-                theme_color: `#0d4072`,
+                background_color: `#4c04a6`,
+                theme_color: `#3e0080`,
                 display: `standalone`,
-                icon: `src/assets/images/logo192.png`, // This path is relative to the root of the site.
+                icon: `src/assets/images/icon.png`, // This path is relative to the root of the site.
             },
         },
         `gatsby-plugin-advanced-sitemap`,

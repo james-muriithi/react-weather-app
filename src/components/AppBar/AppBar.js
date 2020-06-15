@@ -22,7 +22,7 @@ class MyAppBar extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                <AppBar position="static">
+                <AppBar position="static" style={{ background: '#4c04a6'}}>
                     <Toolbar>
                         <Typography className={classes.title} variant="h6" noWrap>
                             Weather App

@@ -8,4 +8,4 @@ Features:
 * Switch between Celsius and Fahrenheit
 
 You can try it on GitHub Pages: 
-https://james-muriithi.github.io/react-weather-app/
+https://reactweather-app.netlify.app/
