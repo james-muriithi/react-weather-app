@@ -4,6 +4,8 @@ import AppBar from '../components/AppBar/AppBar';
 import Search from '../components/Search/Search';
 import Forecast from '../containers/Forecast/Forecast';
 import Error from '../components/Error/Error';
+import getUserLocation from '../helpers/Location';
+import { getForecastDataByCoordinates, getForecastDataByCity} from '../helpers/Forecast';
 
 const Application = styled.div`
   text-align: center;
@@ -31,8 +33,6 @@ const Card = styled.div`
   }
 `;
 
-const apiKey = process.env.GATSBY_OPENWEATHER_API_KEY;
-console.log(apiKey);
 class App extends Component {
     state = {
         city: '',
@@ -47,8 +47,7 @@ class App extends Component {
         e.preventDefault();
 
         try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${this.state.city}&units=metric&cnt=8&appid=${apiKey}`);
-            const json = await response.json();
+            const json = await getForecastDataByCity(this.state.city)
             if (json.cod !== '200') {
                 this.setState({ error: { state: true, message: json.message } });
             } else {
@@ -59,29 +58,18 @@ class App extends Component {
         }
     }
 
-    getUserLocation = async () => {
-        return new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(position => {
-                resolve({
-                    lat: position.coords.latitude,
-                    lon: position.coords.longitude
-                });
-            });
-        });
-    }
-
     getForecastByCoordinates = async () => {
         try {
-            const coords = await this.getUserLocation();
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coords.lat}&lon=${coords.lon}&units=metric&cnt=8&appid=${apiKey}`);
-            const json = await response.json();
+            const coords = await getUserLocation();
+            const json = await getForecastDataByCoordinates(coords)
             if (json.cod !== '200') {
                 this.setState({ error: { state: true } });
             } else {
                 this.setState({ city: json.city.name, forecast: json.list });
             }
         } catch (error) {
-            this.setState({ error: { state: true } });
+            console.log(error);
+            this.setState({ error: { state: true, message: error.message } });
         }
     }
 
