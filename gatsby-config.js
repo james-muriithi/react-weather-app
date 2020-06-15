@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 module.exports = {
+    pathPrefix: "/",
     siteMetadata: {
         title: `React Wather App`,
         description: `PWA Weather Application made with React/Material Ui/Gatsby.This is a personal project built in my spare time for learning purposes.`,

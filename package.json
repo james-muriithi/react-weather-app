@@ -1,7 +1,7 @@
 {
     "name": "weather",
     "version": "0.1.0",
-    "private": true,
+    "private": false,
     "homepage": "https://james-muriithi.github.io/react-weather-app/",
     "dependencies": {
         "dotenv": "^8.2.0",
@@ -16,7 +16,6 @@
         "gatsby-plugin-sharp": "^2.6.11",
         "gatsby-source-filesystem": "^2.3.11",
         "gatsby-transformer-sharp": "^2.5.5",
-        "gh-pages": "^1.1.0",
         "react": "^16.8.0",
         "react-dom": "^16.8.0",
         "react-helmet": "^6.1.0",
@@ -29,5 +28,8 @@
         "serve": "gatsby serve",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d public"
+    },
+    "devDependencies": {
+        "gh-pages": "^3.0.0"
     }
 }
