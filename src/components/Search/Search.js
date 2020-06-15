@@ -66,6 +66,7 @@ const Search = (props) => {
       <form onSubmit={props.getForecastByCity} style={form}>
         <TextField
           placeholder="City"
+          aria-label="city"
           value={props.city}
           onChange={(e) => props.textChanged(e.target.value)}
         />
