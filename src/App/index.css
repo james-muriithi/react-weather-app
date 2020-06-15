@@ -1,0 +1,25 @@
+div.card {
+    position: relative;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+div.container {
+    text-align: center;
+    height: 80vh;
+    width: 65%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+    div.container {
+        width: 100%;
+    }
+    div.card {
+        top: 0;
+        margin-top: 0;
+        box-shadow: none;
+    }
+}

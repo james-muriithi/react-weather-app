@@ -30,6 +30,7 @@ const Menu = styled.div`
 const City = styled.h1`
   margin: 0;
   text-transform: capitalize;
+  color: #292a35;
 `;
 
 const ToggleStyles = {
@@ -42,18 +43,22 @@ const DateRow = styled.div`
   margin-left: 20px;
 `;
 
-const CurrentDate = styled.h3`
+const CurrentDate = styled.h4`
   margin: 0;
+  color: #5c646c;
 `;
 
-const WeatherType = styled.h3`
+const WeatherType = styled.h4`
   margin: 0;
   font-weight: normal;
   text-transform: capitalize;
+  margin-top: 10px;
+  color: #7e828b;
 `;
 
 const Weather = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 100%;
 
@@ -62,11 +67,12 @@ const Weather = styled.div`
   }
 
   i {
-    font-size: 120px;
-    margin-top: -30px;
+    font-size: 250px;
+    margin-top: -100px;
 
     @media (max-width: 700px) {
-      font-size: 70px;
+      font-size: 200px;
+      margin-top: 30px;
     }
   }
 `;
@@ -74,10 +80,13 @@ const Weather = styled.div`
 const Temperature = styled.h1`
   font-size: 120px;
   margin-right: 70px;
+  font-weight: 550;
+  color: #222930;
+  margin: 20px 0 30px 0;
 
   @media (max-width: 700px) {
     font-size: 70px;
-    margin: 30px 0;
+    margin: 20px 0;
   }
 `;
 
@@ -221,9 +230,9 @@ class Forecast extends Component {
           <WeatherType>{today.weather[0].description}</WeatherType>
         </DateRow>
         <Weather>
+          <i className={`wi wi-owm-${this.isDay() ? 'day' : 'night'}-${today.weather[ 0 ].id}`}></i>
           <Temperature>{`${this.getCurrentTemp(today.temp)}°${this.state.tempUnit}`}</Temperature>
-          <i className={`wi wi-owm-${this.isDay() ? 'day' : 'night'}-${today.weather[0].id}`}></i>
-          <Daily>
+          {/* <Daily>
             <li>
               <p>Morning</p>
               <p>{`${Math.round(today.temp.morn)}°${this.state.tempUnit}`}</p>
@@ -240,7 +249,7 @@ class Forecast extends Component {
               <p>Night</p>
               <p>{`${Math.round(today.temp.night)}°${this.state.tempUnit}`}</p>
             </li>
-          </Daily>
+          </Daily> */}
         </Weather>
         <Weekly>
           {this.props.forecast.slice(1).map(day => (

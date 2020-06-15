@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextField from '@material-ui/core/TextField';
+import TF from '@material-ui/core/TextField';
 import cyan from '@material-ui/core/colors/purple';
 
 const cyan500 = cyan[500]
@@ -18,14 +18,21 @@ const Wrapper = styled.div`
   }
 `;
 
+const TextField = styled(TF)`
+  width: 300px;
+  @media (max-width: 976px) {
+      width: 100%;
+  }
+`
+
 const LocationBtn = styled.button`
   position: relative;
   padding: 0;
   font: inherit;
-  background-color: white;
   border: none;
   outline: none;
   cursor: pointer;
+  margin-top: 15px;
   color: #1976d2;
 
   ::after {
@@ -63,7 +70,7 @@ const form = {
 const Search = (props) => {
   return (
     <Wrapper>
-      <form onSubmit={props.getForecastByCity} style={form}>
+      <form onSubmit={props.getForecastByCity} style={form} autoComplete="off">
         <TextField
           placeholder="City"
           id='search-city'
