@@ -2,7 +2,7 @@
     "name": "weather",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://james-muriithi.github.io/",
+    "homepage": "https://james-muriithi.github.io/react-weather-app/",
     "dependencies": {
         "dotenv": "^8.2.0",
         "@material-ui/core": "^4.10.2",
