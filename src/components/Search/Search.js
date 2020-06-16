@@ -8,7 +8,7 @@ const cyan500 = cyan[500]
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
   align-items: center;
   height: 100%;
