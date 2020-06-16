@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import TF from '@material-ui/core/TextField';
 import cyan from '@material-ui/core/colors/purple';
-import weather_svg from '../../assets/images/weather_app.svg';
 import {Fade} from 'react-reveal'
 const cyan500 = cyan[500]
 
@@ -69,16 +68,10 @@ const form = {
   width: "100%"
 }
 
-const Banner = styled.img`
-  margin-top: 30px;
-  width: 150px;
-  height: 150px;
-`
-
 const Search = (props) => {
   return (
     <Wrapper>
-      <Fade left duration={700} distance="20px">
+      <Fade left duration={1000} distance="20px">
       <form onSubmit={props.getForecastByCity} style={form} autoComplete="off">
         <TextField
           placeholder="City"
@@ -91,9 +84,6 @@ const Search = (props) => {
       <br />
       <span>or</span>
       <LocationBtn onClick={props.getForecastByCoordinates}>your current location</LocationBtn>
-      <Banner
-        src={weather_svg}
-      ></Banner>
       </Fade>
     </Wrapper>
   );

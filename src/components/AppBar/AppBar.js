@@ -27,7 +27,7 @@ class MyAppBar extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <Fade top duration={700} distance="20px">
+            <Fade top duration={1000} distance="20px">
             <div className={classes.root}>
                 <AppBar position="static" style={{ background: '#4c04a6'}}>
                     <Toolbar>
