@@ -16,11 +16,18 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
+        `gatsby-theme-material-ui`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `pages`,
                 path: `${__dirname}/src/pages/`,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                // Add any options here
             },
         },
         `gatsby-transformer-sharp`,

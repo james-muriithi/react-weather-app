@@ -4,8 +4,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { Fade } from "react-reveal";
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-// import InfoIcon from '@material-ui/icons/InfoOutlined';
-import Toggle from 'react-dark-mode-toggle';
+import Toggle from 'react-toggle';
+import "./Toggle.css"
+import sun from '../../assets/images/sun.png'
+import moon from '../../assets/images/moon.png'
 
 const styles = theme => ({
     root: {
@@ -35,14 +37,34 @@ class MyAppBar extends Component {
                             Weather App
                         </Typography>
 
-                        <Toggle
-                            speed={2}
-                            checked={false}
-                            onChange={() =>{
-                                console.log('clicked');
-                            }}
-                            size={60}
-                        />
+                            <Toggle
+                                icons={{
+                                    checked: (
+                                        <img
+                                            src={sun}
+                                            width="16"
+                                            height="16"
+                                            role="presentation"
+                                            style={{ pointerEvents: 'none' }}
+                                        />
+                                    ),
+                                    unchecked: (
+                                        <img
+                                            src={sun}
+                                            width="16"
+                                            height="16"
+                                            role="presentation"
+                                            style={{ pointerEvents: 'none' }}
+                                        />
+                                    ),
+                                }}
+                                checked={false}
+                                onChange={e =>
+                                    window.__setPreferredTheme(
+                                        e.target.checked ? 'dark' : 'light'
+                                    )
+                                }
+                            />                        
 
                     </Toolbar>
                 </AppBar>
