@@ -6,7 +6,7 @@ module.exports = {
         title: `React Wather App`,
         description: `PWA Weather Application made with React/Material Ui/Gatsby.This is a personal project built in my spare time for learning purposes.`,
         author: `James Muriithi <muriithijames556@gmail.com>`,
-        siteUrl: `https://james-muriithi.github.io/react-weather-app/`,
+        siteUrl: `https://reactweather-app.netlify.app/`,
         siteLanguage: `en`,
         ogLanguage: `en`,
         headline: `React Wather App`,
@@ -19,8 +19,8 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                name: `images`,
-                path: `${__dirname}/src/assets/images/`,
+                name: `pages`,
+                path: `${__dirname}/src/pages/`,
             },
         },
         `gatsby-transformer-sharp`,

@@ -96,7 +96,7 @@ const Daily = styled.ul`
   list-style: none;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 125px;
   margin-left: 70px;
 
@@ -200,7 +200,7 @@ class Forecast extends Component {
 
   render() {
     const today = this.props.forecast[0];
-
+    console.log(today);
     return (
       <Wrapper>
         <Menu>

@@ -138,8 +138,8 @@ const SEO = ({ title, desc, banner, pathname, article, node }) => {
   const breadcrumb = {
     '@context': 'http://schema.org',
     '@type': 'BreadcrumbList',
-    description: 'James Muriithi\'s personal website.',
-    name: 'James Muriithi',
+    description: 'PWA Weather Application made with React/Material Ui/Gatsby.This is a personal project built in my spare time for learning purposes.',
+    name: 'Weather App',
     itemListElement,
   }
 
