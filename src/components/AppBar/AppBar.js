@@ -5,9 +5,11 @@ import { Fade } from "react-reveal";
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Toggle from 'react-toggle';
+import Context from '../../theme/Context'
 import "./Toggle.css"
 import sun from '../../assets/images/sun.png'
 import moon from '../../assets/images/moon.png'
+
 
 const styles = theme => ({
     root: {
@@ -26,8 +28,12 @@ const styles = theme => ({
 })
 
 class MyAppBar extends Component {
+
+    static contextType = Context;
+
     render() {
         const { classes } = this.props;
+        const { state, dispatch } = this.context
         return (
             <Fade top duration={1000} distance="20px">
             <div className={classes.root}>
@@ -41,7 +47,7 @@ class MyAppBar extends Component {
                                 icons={{
                                     checked: (
                                         <img
-                                            src={sun}
+                                            src={moon}
                                             width="16"
                                             height="16"
                                             role="presentation"
@@ -58,12 +64,10 @@ class MyAppBar extends Component {
                                         />
                                     ),
                                 }}
-                                checked={false}
-                                onChange={e =>
-                                    window.__setPreferredTheme(
-                                        e.target.checked ? 'dark' : 'light'
-                                    )
-                                }
+                                checked={state.isDark}
+                                onChange={()=>{
+                                    dispatch({ type: "TOGGLE_DARK_MODE" });
+                                }}
                             />                        
 
                     </Toolbar>
