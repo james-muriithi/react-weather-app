@@ -36,7 +36,7 @@ class MyAppBar extends Component {
     }
 
     componentDidMount(){
-        const { state, dispatch } = this.context
+        const { state } = this.context
         this.setState({isDark: state.isDark})
     }
 
@@ -69,8 +69,8 @@ class MyAppBar extends Component {
                                             src={moon}
                                             width="16"
                                             height="16"
-                                            role="presentation"
-                                            style={{ pointerEvents: 'none' }}
+                                            alt="moon"
+                                            style={{ pointerEvents: 'none', width: '16px', heigth: '16px' }}
                                         />
                                     ),
                                     unchecked: (
@@ -78,8 +78,8 @@ class MyAppBar extends Component {
                                             src={sun}
                                             width="16"
                                             height="16"
-                                            role="presentation"
-                                            style={{ pointerEvents: 'none',width:'16px', heigth: '16px' }}
+                                            alt="sun"
+                                            style={{ pointerEvents: 'none', width:'16px', heigth: '16px' }}
                                         />
                                     ),
                                 }}

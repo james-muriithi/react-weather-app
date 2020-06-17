@@ -86,30 +86,30 @@ const Temperature = styled.h1`
   }
 `;
 
-const Daily = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
+// const Daily = styled.ul`
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
 
-  display: flex;
-  flex-direction: row;
-  width: 125px;
-  margin-left: 70px;
+//   display: flex;
+//   flex-direction: row;
+//   width: 125px;
+//   margin-left: 70px;
 
-  @media (max-width: 700px) {
-    margin: 20px 0;
-  }
+//   @media (max-width: 700px) {
+//     margin: 20px 0;
+//   }
 
-  li {
-    display: flex;
-    justify-content: space-between;
-  }
+//   li {
+//     display: flex;
+//     justify-content: space-between;
+//   }
 
-  p {
-    margin: 5px 0;
-    font-size: 18px;
-  }
-`;
+//   p {
+//     margin: 5px 0;
+//     font-size: 18px;
+//   }
+// `;
 
 const Weekly = styled.ul`
   margin: 0;
