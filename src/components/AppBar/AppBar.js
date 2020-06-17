@@ -31,9 +31,27 @@ class MyAppBar extends Component {
 
     static contextType = Context;
 
+    state = {
+        isDark: null
+    }
+
+    componentDidMount(){
+        const { state, dispatch } = this.context
+        this.setState({isDark: state.isDark})
+    }
+
+    onChange = () =>{
+        const {dispatch } = this.context
+        this.setState({isDark: !this.state.isDark}, ()=>{
+            dispatch({ type: "TOGGLE_DARK_MODE" })
+        })
+
+        console.log(this.state);
+    }
+
     render() {
         const { classes } = this.props;
-        const { state, dispatch } = this.context
+        console.log(this.state);
         return (
             <Fade top duration={1000} distance="20px">
             <div className={classes.root}>
@@ -43,7 +61,9 @@ class MyAppBar extends Component {
                             Weather App
                         </Typography>
 
-                            <Toggle
+                            {this.state.isDark !== 'null' && <Toggle
+                                // defaultChecked={state.isDark}
+                                checked={this.state.isDark}
                                 icons={{
                                     checked: (
                                         <img
@@ -64,11 +84,8 @@ class MyAppBar extends Component {
                                         />
                                     ),
                                 }}
-                                checked={state.isDark}
-                                onChange={()=>{
-                                    dispatch({ type: "TOGGLE_DARK_MODE" });
-                                }}
-                            />                        
+                                onChange={this.onChange.bind(this)}
+                            /> }                       
 
                     </Toolbar>
                 </AppBar>
