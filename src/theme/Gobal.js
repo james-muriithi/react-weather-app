@@ -31,7 +31,12 @@ export const GlobalStyles = createGlobalStyle`
   .current_date{
     color: ${({ theme }) => theme.date};
   }
+  .error_back,
   .geolocation{
     color: ${({ theme }) => theme.link};
+  }
+  input#search-city{
+    color: ${({ theme }) => theme.subTitle};
+    text-transform: capitalize;
   }
   `;

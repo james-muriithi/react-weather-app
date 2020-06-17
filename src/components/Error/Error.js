@@ -21,7 +21,7 @@ const BackBtn = styled.button`
   position: relative;
   padding: 0;
   font: inherit;
-  background-color: white;
+  background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
@@ -52,7 +52,7 @@ const BackBtn = styled.button`
 const Error = (props) => (
   <Wrapper>
     <p>{!props.message ? 'Oops! Something went wrong.' : props.message + '.'}</p>
-    <BackBtn onClick={props.back}>Back</BackBtn>
+    <BackBtn className='error_back' onClick={props.back}>Back</BackBtn>
   </Wrapper>
 );
 
