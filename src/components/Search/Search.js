@@ -34,7 +34,7 @@ const LocationBtn = styled.button`
   outline: none;
   cursor: pointer;
   margin-top: 15px;
-  color: #1976d2;
+  font-size: 17px;
 
   ::after {
     content: "";
@@ -82,8 +82,8 @@ const Search = (props) => {
         />
       </form>
       <br />
-      <span>or</span>
-      <LocationBtn onClick={props.getForecastByCoordinates}>your current location</LocationBtn>
+      <span style={{fontSize:'17px'}}>or</span>
+      <LocationBtn className='geolocation' onClick={props.getForecastByCoordinates}>your current location</LocationBtn>
       </Fade>
     </Wrapper>
   );

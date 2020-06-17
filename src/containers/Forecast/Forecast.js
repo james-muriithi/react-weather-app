@@ -4,7 +4,6 @@ import IconButton from '@material-ui/core/IconButton';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Toggle from '@material-ui/core/Switch';
-import './Forecast.css';
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,7 +29,6 @@ const Menu = styled.div`
 const City = styled.h1`
   margin: 0;
   text-transform: capitalize;
-  color: #292a35;
 `;
 
 const ToggleStyles = {
@@ -45,7 +43,6 @@ const DateRow = styled.div`
 
 const CurrentDate = styled.h4`
   margin: 0;
-  color: #5c646c;
 `;
 
 const WeatherType = styled.h4`
@@ -81,7 +78,6 @@ const Temperature = styled.h1`
   font-size: 120px;
   margin-right: 70px;
   font-weight: 550;
-  color: #222930;
   margin: 20px 0 30px 0;
 
   @media (max-width: 700px) {
@@ -134,14 +130,15 @@ const Weekly = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 10px;
   }
 
-  h3 {
+  h4 {
     margin: 0;
     margin-bottom: 15px;
 
     @media (max-width: 700px) {
-      font-size: 15px;
+      font-size: 14px;
     }
   }
 
@@ -205,12 +202,12 @@ class Forecast extends Component {
       <Wrapper>
         <Menu>
           <IconButton onClick={this.props.back}>
-            <SvgIcon>
+            <SvgIcon className='arrow-back'>
               <path d="M0 0h24v24H0z" fill="none" />
               <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
             </SvgIcon>
           </IconButton>
-          <City>{this.props.city}</City>
+          <City className='forecast-city'>{this.props.city}</City>
           <FormControlLabel
             labelPlacement="start"
             style={ToggleStyles}
@@ -226,12 +223,12 @@ class Forecast extends Component {
           />
         </Menu>
         <DateRow>
-          <CurrentDate>{this.getDateString(today.dt)}</CurrentDate>
-          <WeatherType>{today.weather[0].description}</WeatherType>
+          <CurrentDate className='current_date'>{this.getDateString(today.dt)}</CurrentDate>
+          <WeatherType className='weather_description'>{today.weather[0].description}</WeatherType>
         </DateRow>
         <Weather>
-          <i className={`wi wi-owm-${this.isDay() ? 'day' : 'night'}-${today.weather[ 0 ].id}`}></i>
-          <Temperature>{`${this.getCurrentTemp(today.temp)}°${this.state.tempUnit}`}</Temperature>
+          <i className={`big-icon wi wi-owm-${this.isDay() ? 'day' : 'night'}-${today.weather[ 0 ].id}`}></i>
+          <Temperature className='temperature'>{`${this.getCurrentTemp(today.temp)}°${this.state.tempUnit}`}</Temperature>
           {/* <Daily>
             <li>
               <p>Morning</p>
@@ -254,7 +251,7 @@ class Forecast extends Component {
         <Weekly>
           {this.props.forecast.slice(1).map(day => (
             <li key={day.dt}>
-              <h3 className='day-title'>{this.getDay(new Date(day.dt * 1000).getDay())}</h3>
+              <h4 className={`day_title`}>{this.getDay(new Date(day.dt * 1000).getDay())}</h4>
               <i className={`wi wi-owm-${day.weather[0].id}`}></i>
               <p>{`${Math.round(Object.values(day.temp).reduce((sum, current) => sum + current) / Object.values(day.temp).length)}°${this.state.tempUnit}`}</p>
             </li>

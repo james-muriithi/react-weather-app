@@ -37,7 +37,7 @@ class MyAppBar extends Component {
         return (
             <Fade top duration={1000} distance="20px">
             <div className={classes.root}>
-                <AppBar position="static" style={{ background: '#4c04a6'}}>
+                <AppBar position="static" className='AppBar'>
                     <Toolbar>
                         <Typography className={classes.title} variant="h6" noWrap>
                             Weather App
