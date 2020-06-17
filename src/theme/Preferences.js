@@ -1,5 +1,6 @@
 export const Save = (isDark) => {
     if (typeof window !== 'undefined') {
+        console.log(theme);
         const theme = isDark ? 'dark' : 'light'
         window.localStorage.setItem('theme', theme)
     }
@@ -8,7 +9,7 @@ export const Save = (isDark) => {
 export const Get = () => {
     if (typeof window !== 'undefined') {
         const theme = window.localStorage.getItem('theme')
-        return theme !== 'light' ? false : true
+        return theme === 'light' ? false : true
     } else {
         return false;
     }

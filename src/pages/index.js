@@ -14,6 +14,8 @@ const IndexPage = () => {
     const isDark = preferences.Get()
     const [ state, dispatch ] = useReducer(reducer, { isDark });
 
+    console.log(state);
+
     return (
         <>
             <SEO />
