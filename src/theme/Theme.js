@@ -33,7 +33,7 @@ export const darkTheme = {
     temperature: '#f6f6f6',
     subTitle: '#a0a8ab',
     date: '#c9cdcf',
-    link: 'rgb(70, 114, 254)',
+    link: '#ba86fd',
     subTitleHover: '6b737b',
     logoColor: '#bbbfc4',
     buttonBackground: 'transparent',

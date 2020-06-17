@@ -9,7 +9,7 @@ export const Save = (isDark) => {
 export const Get = () => {
     if (typeof window !== 'undefined') {
         const theme = window.localStorage.getItem('theme')
-        return theme === 'light' ? false : true
+        return theme === 'dark' ? true : false
     } else {
         return false;
     }

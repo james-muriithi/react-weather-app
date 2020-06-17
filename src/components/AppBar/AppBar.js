@@ -63,7 +63,6 @@ class MyAppBar extends Component {
 
                             {this.state.isDark !== 'null' && <Toggle
                                 // defaultChecked={state.isDark}
-                                checked={this.state.isDark}
                                 icons={{
                                     checked: (
                                         <img
@@ -80,10 +79,12 @@ class MyAppBar extends Component {
                                             width="16"
                                             height="16"
                                             role="presentation"
-                                            style={{ pointerEvents: 'none' }}
+                                            style={{ pointerEvents: 'none',width:'16px', heigth: '16px' }}
                                         />
                                     ),
                                 }}
+                                aria-label="toggle dark mode"
+                                checked={this.state.isDark}
                                 onChange={this.onChange.bind(this)}
                             /> }                       
 

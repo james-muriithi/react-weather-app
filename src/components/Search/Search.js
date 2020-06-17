@@ -83,7 +83,7 @@ const Search = (props) => {
       </form>
       <br />
       <span style={{fontSize:'17px'}}>or</span>
-      <LocationBtn className='geolocation' onClick={props.getForecastByCoordinates}>your current location</LocationBtn>
+      <LocationBtn className='geolocation' onClick={props.getForecastByCoordinates}>Your current location</LocationBtn>
       </Fade>
     </Wrapper>
   );

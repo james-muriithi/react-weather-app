@@ -36,7 +36,14 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.link};
   }
   input#search-city{
-    color: ${({ theme }) => theme.subTitle};
+    color: ${({ theme }) => theme.title};
+    border-color: ${({ theme }) => theme.title};
     text-transform: capitalize;
   }
+  .MuiInput-underline:before {
+      border-bottom-color: ${({ theme }) => theme.subTitle};
+    }
+    .MuiInput-underline:hover:not(.Mui-disabled):before {
+      border-bottom-color: ${({ theme }) => theme.logoColor};
+    }
   `;
